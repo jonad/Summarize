@@ -1,0 +1,33 @@
+
+{% extends "layout.html" %}
+{% block content %}
+   <div class="content-section">
+           <form method="POST" action="">
+               {{ form.hidden_tag() }}
+               <fieldset class="form-group">
+                   <legend class="border-bottom mb-4">
+                       Summarization
+                   </legend>
+                     <div class="form-group">
+                       {{ form.summarization.label(class="form-control-label") }}
+                       {{ form.summarization( class="textarea form-control",  rows="5") }}
+                   </div>
+               </fieldset>
+               <div class="form-group">
+                       {{ form.summarize(class="btn btn-outline-info") }}
+               </div>
+
+           </form>
+           {% if translation %}
+
+                   <hr>
+
+                   <div>
+                       <h2>Summary</h2>
+                       <div class="textarea">{{ translation }}</div>
+                   </div>
+                   {% endif %}
+
+       </div>
+
+{% endblock content %}
