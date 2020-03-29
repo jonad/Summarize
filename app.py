@@ -3,6 +3,9 @@ import json
 from summary_form import *
 from flask import Flask, render_template
 from config import *
+import os
+
+URL = os.environ.get('URL')
 
 
 
@@ -19,7 +22,8 @@ def home():
         src = form.summarization.data.lower()
         headers = {"content-Tupe": "application/json"}
         data = [{"src":src, "id":100}]
-        if len(data[0]['src']) < 10:
+        data_arr  =len(data[0]['src'].split())
+        if data_arr <= 10:
             summary = data[0]['src']
         else:
             response = requests.post(URL, json=data, headers=headers)
