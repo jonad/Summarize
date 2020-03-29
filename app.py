@@ -36,4 +36,4 @@ def home():
         
 
 if __name__ == '__main__':
-    app.run(port=3003)
+    app.run()
