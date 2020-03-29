@@ -1,4 +1,3 @@
-from flask import Flask, render_template, jsonify, request
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField, SubmitField
 

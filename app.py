@@ -1,12 +1,10 @@
 import requests
 import json
-import os
 from summary_form import *
+from flask import Flask, render_template
+from config import *
 
-IP = os.environ['HOST']
-PORT = os.environ['PORT']
-URL_ROOT = os.environ['URL_ROOT']
-URL = 'http://' + IP + ':' + PORT + URL_ROOT + '/translate'
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret'
@@ -32,4 +30,4 @@ def home():
         
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3000, debug=True)
+    app.run()
