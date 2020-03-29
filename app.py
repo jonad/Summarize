@@ -13,6 +13,7 @@ app.config['SECRET_KEY'] = 'secret'
 
 
 
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = SummaryForm()
@@ -36,4 +37,4 @@ def home():
         
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=3004)
