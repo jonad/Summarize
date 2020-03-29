@@ -2,7 +2,6 @@ import requests
 import json
 from summary_form import *
 from flask import Flask, render_template
-from config import *
 import os
 
 URL = os.environ.get('URL')
